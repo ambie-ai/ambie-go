@@ -4,6 +4,8 @@ Official Go SDK for [AMBIE](https://ambie.ai).
 
 Speech-to-text in noisy environments, translation, TTS, embeddings, sentiment, summarization, content moderation, and language detection — over a single typed client.
 
+> **⚠ Platform preview.** AMBIE's API is live and the SDK surface is stable, but the inference is currently served by commodity off-the-shelf models (Deepgram, Whisper, Llama 3.1, BGE). The proprietary AMBIE acoustic-intelligence models — the 90-95% noisy-environment accuracy the brand is named after — are in development and will replace the transcription / TTS engines in 2027. Same API surface, free upgrade when it lands. Full disclosure at [ambie.ai/preview](https://ambie.ai/preview/). Every API response carries `X-AMBIE-Preview: true` until that swap.
+
 ## Install
 
 ```bash
