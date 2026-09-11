@@ -4,11 +4,11 @@
 /go.sh
 /go.log
 
-# >>> macos-ios-metadata (managed: edit siteops/shared/gitignore/macos-ios.gitignore, then run siteops/scripts/gitignore-macos-sync.py)
+# >>> macos-ios-metadata (managed: edit siteops/shared/gitignore/macos-ios.gitignore, then run siteops/scripts/gitignore-sync.py)
 # macOS and iOS metadata. Appears whenever files arrive from a Mac, an iPhone,
 # an SMB share or Syncthing, and never belongs in a repo.
 # Single source: siteops/shared/gitignore/macos-ios.gitignore
-# Applied by: siteops/scripts/gitignore-macos-sync.py
+# Applied by: siteops/scripts/gitignore-sync.py
 .DS_Store
 ._*
 .AppleDouble
@@ -30,3 +30,105 @@ Temporary Items
 # Finder's "Icon<CR>" is omitted on purpose: the pattern needs literal carriage
 # returns that editors strip, and "Icon?" would also hide real files named Icons.
 # <<< macos-ios-metadata
+
+# >>> ai-agent-files (managed: edit siteops/shared/gitignore/ai-agents.gitignore, then run siteops/scripts/gitignore-sync.py)
+# Files AI coding agents drop into a working tree: instruction files, settings,
+# skills, chat logs. They stay local and are never committed or pushed.
+# The global git hooks block them in every repo, matched by git's own ignore
+# rules against this file (claude-code/git-hooks/lib/ai-guard.sh).
+# Claude files are not listed on purpose: they are blocked only in public and
+# abundera repos (siteops/shared/git-guard/claude-files.ere).
+# Policy: siteops/docs/AI-AGENT-FILES-POLICY.md
+# OpenAI Codex
+AGENTS.md
+AGENTS.override.md
+.codex/
+# Google Antigravity (agy), Gemini CLI, Gemini Code Assist
+.agents/
+.agent/
+_agents/
+_agent/
+.antigravity*
+GEMINI.md
+.gemini/
+.geminiignore
+.aiexclude
+# GitHub Copilot
+.github/copilot-instructions.md
+.github/instructions/
+.github/prompts/
+.github/chatmodes/
+.github/agents/
+# Cursor
+.cursor/
+.cursorrules
+.cursorignore
+.cursorindexingignore
+# Windsurf, Codeium
+.windsurf/
+.windsurfrules
+.codeium/
+.codeiumignore
+# Cline, Roo Code, Kilo Code
+.clinerules
+.clineignore
+.cline/
+.roo/
+.roorules
+.roomodes
+.rooignore
+.kilocode/
+.kilocodemodes
+# Continue
+.continue/
+.continuerc.json
+.continueignore
+# Aider
+.aider*
+# Amazon Q, Kiro
+.amazonq/
+.kiro/
+# JetBrains Junie and AI Assistant
+.junie/
+.aiignore
+# Augment, Tabnine, Sourcegraph Cody
+.augment/
+.augment-guidelines
+.augmentignore
+.tabnine/
+.tabnineignore
+.cody/
+# OpenHands, Goose, Qwen Code, OpenCode, Crush, Warp, Factory
+.openhands/
+.openhands_instructions
+.goosehints
+.goose/
+QWEN.md
+.qwen/
+opencode.json
+opencode.jsonc
+.opencode/
+CRUSH.md
+crush.json
+.crush.json
+.crush/
+.crushignore
+WARP.md
+.factory/
+# Trae, Devin, Zencoder, Mistral Vibe, Grok, Zed
+.trae/
+.devin/
+.zencoder/
+.vibe/
+.grok/
+GROK.md
+.rules
+# Agent tooling: Serena, Task Master, Spec Kit, SpecStory, claude-flow
+.serena/
+.taskmaster/
+.specify/
+.specstory/
+.claude-flow/
+.swarm/
+.hive-mind/
+# <<< ai-agent-files
