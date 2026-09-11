@@ -3,3 +3,30 @@
 /go
 /go.sh
 /go.log
+
+# >>> macos-ios-metadata (managed: edit siteops/shared/gitignore/macos-ios.gitignore, then run siteops/scripts/gitignore-macos-sync.py)
+# macOS and iOS metadata. Appears whenever files arrive from a Mac, an iPhone,
+# an SMB share or Syncthing, and never belongs in a repo.
+# Single source: siteops/shared/gitignore/macos-ios.gitignore
+# Applied by: siteops/scripts/gitignore-macos-sync.py
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+# iCloud Drive placeholders for evicted files
+*.icloud
+# Finder's "Icon<CR>" is omitted on purpose: the pattern needs literal carriage
+# returns that editors strip, and "Icon?" would also hide real files named Icons.
+# <<< macos-ios-metadata
